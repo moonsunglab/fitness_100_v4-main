@@ -11,8 +11,8 @@ class CardioEnduranceTestPage extends StatefulWidget {
 }
 
 class _CardioEnduranceTestPageState extends State<CardioEnduranceTestPage> {
-  // [변경] 테스트용 1초 설정 (원래 60초)
-  static const int _initialTime = 1;
+  // [변경] 다시 60초로 복원
+  static const int _initialTime = 60;
 
   int _secondsRemaining = _initialTime;
   Timer? _timer;
@@ -112,7 +112,6 @@ class _CardioEnduranceTestPageState extends State<CardioEnduranceTestPage> {
                 ),
                 const SizedBox(height: 20),
 
-                // [변경] 설명 문구 가독성 개선
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -149,7 +148,7 @@ class _CardioEnduranceTestPageState extends State<CardioEnduranceTestPage> {
                       ),
                     ),
                     child: const Text(
-                      "측정 시작 (1초)", // [변경] 1분 -> 1초
+                      "측정 시작 (1분)", // [변경] 1초 -> 1분
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

@@ -2,7 +2,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-const String baseUrl = 'http://10.0.2.2:8000';
+const String baseUrl =
+    'https://loage-backend-1084214236576.asia-northeast3.run.app';
 
 class Facility {
   final int id;

@@ -218,15 +218,16 @@ class _PeerBattleTabState extends State<PeerBattleTab> {
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh, color: Colors.black),
-            onPressed: () {
-              setState(() => _isLoading = true);
-              _initializeBattle();
-            },
-          ),
-        ],
+        // [수정] 새로고침 버튼 제거
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.refresh, color: Colors.black),
+        //     onPressed: () {
+        //       setState(() => _isLoading = true);
+        //       _initializeBattle();
+        //     },
+        //   ),
+        // ],
       ),
       backgroundColor: Colors.white,
       body: _isLoading
@@ -323,7 +324,6 @@ class _PeerBattleTabState extends State<PeerBattleTab> {
                   const SizedBox(height: 40),
                   const Text("주간 미션 성공 (회)", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black87)),
                   const SizedBox(height: 20),
-                  // [수정] 점수 표시 부분을 Expanded로 감싸서 중앙 정렬
                   Row(
                     children: [
                       Expanded(
@@ -346,7 +346,6 @@ class _PeerBattleTabState extends State<PeerBattleTab> {
                     ],
                   ),
                   const SizedBox(height: 40),
-                  // [수정] '현재 승률 (점유율)' -> '현재 승률'로 변경
                   const Text("현재 승률", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
                   Text("$winRate%", style: const TextStyle(fontSize: 50, fontWeight: FontWeight.w900)),
@@ -387,7 +386,6 @@ class _PeerBattleTabState extends State<PeerBattleTab> {
                           MaterialPageRoute(builder: (context) => BattleResultPage(battleData: dummyBattleData)),
                         );
                       },
-                      // [수정] [개발용] 텍스트 제거
                       child: const Text("결과 페이지 미리보기", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                     ),
                   ),
